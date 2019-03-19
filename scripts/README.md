@@ -10,4 +10,6 @@ The following files must be placed in `/etc/weewx/skins/Smartphone/`
 
 # Crontab jobs
 * transfer.sh
+	*	*/7 * * * *
 * transfer_db.sh
+	*	1 1 * * *

@@ -19,5 +19,5 @@ cnx = sqlite3.connect(DATABASE)
 
 df = pd.read_sql_query("SELECT * FROM archive", cnx)
 
-df['date'] = pd.to_datetime(df['dateTime'],unit='s') 
+df['date'] = pd.to_datetime(df['dateTime'], unit='s') 
 ```

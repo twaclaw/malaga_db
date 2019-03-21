@@ -6,32 +6,20 @@ SQLite database for this weather station:
 
 ![malaga](images/ws.jpg)
 
-## WeeWX Installation
-#### Installation
-```bash
-sudo apt-get update
-sudo apt-get full-upgrade
-wget http://www.weewx.com/downloads/weewx_VERSION.deb
-sudo dpkg -i weewx_VERSION.deb
-sudo apt-get install -f
-```
+## Example Python code to read the database 
 
+```python
+import sqlite3
+import pandas as pd
 
-#### Configure logs
-```bash
-sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d
-sudo /etc/init.d/rsyslog stop
-sudo /etc/init.d/rsyslog start
-sudo ln -s /etc/weewx/rsyslog.d/weewx.conf /etc/rsyslog.d/10-weewx.conf
-sudo ln -s /etc/weewx/logrotate.d/weewx /etc/logrotate.d
-```
+DATABASE = 'weewx.sdb'
 
-#### Device configuration and verification
-```bash
-wee_device  --info
-wee_device --set-interval=5
-wee_device --set-time
-sudo /etc/init.d/weewx status
+# Create your connection.
+cnx = sqlite3.connect(DATABASE)
+
+df = pd.read_sql_query("SELECT * FROM archive", cnx)
+
+df['date'] = pd.to_datetime(df['dateTime'],unit='s') 
 ```
 
 ## Credits

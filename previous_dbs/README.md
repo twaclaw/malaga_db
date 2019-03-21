@@ -1,10 +1,12 @@
 # Previous databases
 
-This databases contain previous measurements
+This databases contain previous measurements.
+
+**The structure of these databases and the current one might be different.**
 
 * `weewx_2014-2015.sdb`:  measures between 02.11.2013 and 04.12.2015
 
-## Example code to read the database 
+## Example Python code to read the database 
 
 ```python
 import sqlite3

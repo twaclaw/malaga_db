@@ -9,9 +9,9 @@ The following files must be placed in `/etc/weewx/skins/Smartphone/`
 `weewx.conf` is the general configuration located at `/etc/weewx/weewx.conf`
 
 # Crontab jobs
-* transfer.sh
+* `transfer.sh`
 	*	*/7 * * * *
-* transfer_db.sh
+* `transfer_db.sh`
 	*	1 1 * * *
 
 

@@ -43,3 +43,11 @@ wee_device --set-time
 sudo /etc/init.d/weewx status
 ```
 
+#### Dump data from the console
+Some time the web page gets stalled on a particular date.
+
+```bash
+wee_device --dump
+wee_device --clear-memory
+```
+

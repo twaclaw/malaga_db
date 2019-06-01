@@ -13,6 +13,8 @@ The following files must be placed in `/etc/weewx/skins/Smartphone/`
 	*	*/7 * * * *
 * *transfer_db.sh*
 	*	1 1 * * *
+* *watchdog.sh*
+	*	1 12 * * *
 
 
 # WeeWX Installation
@@ -45,6 +47,7 @@ sudo /etc/init.d/weewx status
 
 #### Dump data from the console
 Some time the web page gets stalled on a particular date.
+This actions are automatically done if the current date  and the date displayed in the web page do no match. 
 
 ```bash
 wee_device --dump

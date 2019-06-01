@@ -14,7 +14,7 @@ import pandas as pd
 
 DATABASE = 'weewx.sdb'
 
-# Create your connection.
+# Create a connection.
 cnx = sqlite3.connect(DATABASE)
 
 df = pd.read_sql_query("SELECT * FROM archive", cnx)

@@ -17,8 +17,8 @@ if [ "$WEB_DAY" -ne "$CURRENT_DAY" ]
 then
     echo "$(date) Date mistmatch, current day: $CURRENT_DAY, web day: $WEB_DAY. Dumping console data and clearing memory"
     sudo /etc/init.d/weewx stop
-    wee_device --dump
-    wee_device --clear-memory
+    yes y | wee_device --dump
+    yes y | wee_device --clear-memory
     sudo /etc/init.d/weewx start
 fi
 exit 0
